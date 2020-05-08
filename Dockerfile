@@ -14,7 +14,7 @@ ENV INSTALLDIR /home/container
 # Install Dependencies
 RUN set -x \
 	&& dpkg --add-architecture i386 \
-    && echo steam steam/question select "I AGREE" | sudo debconf-set-selections \
+    && echo steam steam/question select "I AGREE" | debconf-set-selections \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		steamcmd wget tar curl gcc g++ lib32gcc1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.0.0:i386 libcurl4:i386 lib32tinfo5 libtinfo5:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 iproute2 gdb libsdl1.2debian libfontconfig telnet net-tools netcat \
