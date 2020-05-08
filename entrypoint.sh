@@ -5,7 +5,7 @@ sleep 1
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
 # Update Source Server
-./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update 232250 +quit
+steamcmd +login anonymous +force_install_dir /home/container +app_update 232250 +quit
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
