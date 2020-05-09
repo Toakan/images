@@ -21,7 +21,7 @@ RUN set -x \
 		libbz2-1.0:i386=1.0.6-9.2~deb10u1 \
 		lib32gcc1=1:8.3.0-6 \
 		lib32stdc++6=8.3.0-6 \
-		libtinfo5:i386=6.1+20181013-2+deb10u2 \
+		libtinfo5:i386 \
 		libcurl3-gnutls:i386=7.64.0-4 \
 		libfontconfig telnet net-tools netcat \
     && su steam -c \
