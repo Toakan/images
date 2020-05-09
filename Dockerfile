@@ -22,7 +22,7 @@ RUN set -x \
 		lib32gcc1 \
 		lib32stdc++6 \
 		libtinfo5:i386 \
-		libcurl3-gnutls:i386=7.64.0-4 \
+		libcurl3-gnutls:i386 \
 		libfontconfig telnet net-tools netcat \
     && su steam -c \
 		"steamcmd \
