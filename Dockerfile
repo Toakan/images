@@ -16,12 +16,11 @@ RUN set -x \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		steamcmd wget tar curl gcc g++ lib32gcc1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.0.0:i386 libcurl4:i386 lib32tinfo5 libtinfo5:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 iproute2 gdb libsdl1.2debian libfontconfig telnet net-tools netcat \
 	&& useradd -m -d /home/container container \
-    && su container -c \
-		"steamcmd \
+    && steamcmd \
 			+login anonymous \
 			+force_install_dir ${INSTALLDIR} \
 			+app_update ${STEAMAPPID} validate \
-			+quit "\
+			+quit \
 	&& cd ${INSTALLDIR}/tf \
 	&& wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz | tar xvzf - \
 	&& wget -qO- https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6454-linux.tar.gz | tar xvzf - \
