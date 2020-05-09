@@ -25,7 +25,7 @@ RUN set -x \
 		libcurl3-gnutls:i386 \
 		libfontconfig telnet net-tools netcat \
     && su steam -c \
-		"steamcmd \
+		"${STEAMCMDDIR}/steamcmd.sh \
 			+login anonymous \
 			+force_install_dir ${STEAMAPPDIR} \
 			+app_update ${STEAMAPPID} validate \
