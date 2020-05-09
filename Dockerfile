@@ -13,7 +13,17 @@ RUN set -x \
 	&& dpkg --add-architecture i386 \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
-		wget tar curl gcc g++ lib32gcc1 libgcc1 libcurl4-gnutls-dev:i386 libssl1.0.0:i386 libcurl4:i386 lib32tinfo5 libtinfo5:i386 lib32z1 lib32stdc++6 libncurses5:i386 libcurl3-gnutls:i386 iproute2 gdb libsdl1.2debian libfontconfig telnet net-tools netcat \
+		wget tar curl \
+		wget=1.20.1-1.1 \
+		ca-certificates=20190110 \
+		lib32z1=1:1.2.11.dfsg-1 \
+		libncurses5:i386=6.1+20181013-2+deb10u2 \
+		libbz2-1.0:i386=1.0.6-9.2~deb10u1 \
+		lib32gcc1=1:8.3.0-6 \
+		lib32stdc++6=8.3.0-6 \
+		libtinfo5:i386=6.1+20181013-2+deb10u2 \
+		libcurl3-gnutls:i386=7.64.0-4 \
+		libfontconfig telnet net-tools netcat \
     && su steam -c \
 		"steamcmd \
 			+login anonymous \
